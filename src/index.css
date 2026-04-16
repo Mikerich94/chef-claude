@@ -127,17 +127,18 @@ ul.ingredients-list > li {
   border: none;
   color: #666;
   cursor: pointer;
-  border-radius: 6px;
-  transition: all 0.2s ease;
   width: 32px;
   height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 6px;
+  transition:
+    color 0.2s ease,
+    transform 0.1s ease;
 }
 
 .remove-button:hover {
-  background-color: #fee2e2;
   color: #dc2626;
 }
 
@@ -151,6 +152,7 @@ ul.ingredients-list > li {
   transform: scale(0.9);
 }
 
+/* Mobile touch target */
 @media (pointer: coarse) {
   .remove-button {
     width: 44px;
