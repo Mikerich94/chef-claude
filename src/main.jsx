@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
 import ClaudeRecipe from "./components/ClaudeRecipe";
 import IngredientsList from "./components/IngredientsList";
 import { getRecipeFromChefClaude } from "./ai";
@@ -8,16 +8,6 @@ export default function Main() {
   const [recipe, setRecipe] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const recipeRef = useRef(null);
-
-  useEffect(() => {
-    if (recipe) {
-      recipeRef.current?.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    }
-  }, [recipe]);
 
   async function getRecipe() {
     setLoading(true);
@@ -82,7 +72,7 @@ export default function Main() {
         </p>
       )}
 
-      <div ref={recipeRef}>{recipe && <ClaudeRecipe recipe={recipe} />}</div>
+      {recipe && <ClaudeRecipe recipe={recipe} />}
     </main>
   );
 }
