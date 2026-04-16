@@ -37,7 +37,6 @@ main {
   flex-wrap: wrap;
   justify-content: center;
   gap: 12px;
-  height: 38px;
 }
 
 .add-ingredient-form > input {
