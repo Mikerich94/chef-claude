@@ -22,6 +22,13 @@ export default function Main() {
     setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
   }
 
+  function removeIngredient(formData) {
+    const ingredientToRemove = formData.get("ingredient");
+    setIngredients((prevIngredients) =>
+      prevIngredients.filter((ingredient) => ingredient !== ingredientToRemove),
+    );
+  }
+
   return (
     <main>
       <form action={addIngredient} className="add-ingredient-form">
@@ -34,7 +41,11 @@ export default function Main() {
         <button>Add ingredient</button>
       </form>
       {ingredients.length > 0 && (
-        <IngredientsList ingredients={ingredients} getRecipe={getRecipe} />
+        <IngredientsList
+          ingredients={ingredients}
+          getRecipe={getRecipe}
+          removeIngredient={removeIngredient}
+        />
       )}
       {loading && <p>Fetching your recipe... 🍳</p>}
 

@@ -1,6 +1,16 @@
 export default function IngredientsList(props) {
   const ingredientsListItems = props.ingredients.map((ingredient) => (
-    <li key={ingredient}>{ingredient}</li>
+    <>
+      <li key={ingredient}>
+        {ingredient}
+        <button
+          className="remove-button"
+          onClick={() => props.removeIngredient(ingredient)}
+        >
+          -
+        </button>
+      </li>
+    </>
   ));
 
   return (
