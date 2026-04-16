@@ -9,11 +9,17 @@ export default function Main() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
 
+  const recipeRef = useRef(null);
+
   async function getRecipe() {
     setLoading(true);
+
     const recipeMarkdown = await getRecipeFromChefClaude(ingredients);
     setRecipe(recipeMarkdown);
+
     setLoading(false);
+
+    recipeRef.current?.scrollIntoView({ behavior: "smooth" });
   }
 
   function addIngredient(formData) {
@@ -65,7 +71,7 @@ export default function Main() {
         </p>
       )}
 
-      {recipe && <ClaudeRecipe recipe={recipe} />}
+      <div ref={recipeRef}>{recipe && <ClaudeRecipe recipe={recipe} />}</div>
     </main>
   );
 }
