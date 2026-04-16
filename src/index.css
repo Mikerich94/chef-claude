@@ -152,6 +152,10 @@ ul.ingredients-list > li {
   transform: scale(0.9);
 }
 
+.intro {
+  text-align: center;
+}
+
 /* Mobile touch target */
 @media (pointer: coarse) {
   .remove-button {
