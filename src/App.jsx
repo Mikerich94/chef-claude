@@ -1,7 +1,7 @@
 import Header from "./Header";
 import Main from "./main";
 
-import "./App.css";
+import "./index.css";
 
 function App() {
   return (
