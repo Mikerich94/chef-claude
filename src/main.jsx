@@ -50,7 +50,7 @@ export default function Main() {
           removeIngredient={removeIngredient}
         />
       )}
-      {loading && <p>Fetching your recipe... 🍳</p>}
+      {loading && <p className="loading">Fetching your recipe... 🍳</p>}
 
       {recipe && <ClaudeRecipe recipe={recipe} />}
     </main>
