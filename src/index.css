@@ -174,7 +174,6 @@ ul.ingredients-list > li {
 
 .remove-button:hover {
   color: #dc2626;
-  background-color: rgba(220, 38, 38, 0.08);
   transform: translateY(-1px);
 }
 
