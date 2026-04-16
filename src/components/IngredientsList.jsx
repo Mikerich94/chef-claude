@@ -4,10 +4,12 @@ export default function IngredientsList(props) {
       <li key={ingredient}>
         {ingredient}
         <button
+          type="button"
+          aria-label={`Remove ${ingredient}`}
           className="remove-button"
           onClick={() => props.removeIngredient(ingredient)}
         >
-          -
+          <span aria-hidden="true">−</span>
         </button>
       </li>
     </>

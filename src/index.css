@@ -123,26 +123,27 @@ ul.ingredients-list > li {
   }
 }
 .remove-button {
+  background: transparent;
+  border: none;
+  color: #666;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: all 0.2s ease;
   width: 32px;
   height: 32px;
-  border-radius: 50%;
-  border: none;
-  background-color: rgba(0, 0, 0, 0.06);
-  color: #333;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: all 0.2s ease;
 }
 
 .remove-button:hover {
   background-color: #fee2e2;
-  color: #b91c1c;
+  color: #dc2626;
 }
 
+/* Keyboard accessibility */
 .remove-button:focus-visible {
-  outline: 2px solid #2563eb;
+  outline: 2px solid #dc2626;
   outline-offset: 2px;
 }
 
