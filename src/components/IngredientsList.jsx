@@ -1,3 +1,4 @@
+import { Trash2 } from "lucide-react";
 export default function IngredientsList(props) {
   const ingredientsListItems = props.ingredients.map((ingredient) => (
     <>
@@ -9,7 +10,7 @@ export default function IngredientsList(props) {
           className="remove-button"
           onClick={() => props.removeIngredient(ingredient)}
         >
-          <span aria-hidden="true">−</span>
+          <Trash2 size={16} />
         </button>
       </li>
     </>
