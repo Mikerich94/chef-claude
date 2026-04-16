@@ -58,6 +58,7 @@ main {
   width: 150px;
   font-size: 0.875rem;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .add-ingredient-form > button:hover {
