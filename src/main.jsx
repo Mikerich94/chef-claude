@@ -52,9 +52,10 @@ export default function Main() {
 
   return (
     <main>
+      <h2 className="header">Not sure what to cook?</h2>
       <p className="intro">
-        Not sure what to cook? Add at least four ingredients, then submit your
-        list to Claude’s API to get a recipe recommendation!
+        Add at least four ingredients, then submit your list to Claude’s API to
+        get a recipe recommendation!
       </p>
       <form action={addIngredient} className="add-ingredient-form">
         <input

@@ -183,6 +183,9 @@ ul.ingredients-list > li {
 .remove-button:active {
   transform: translateY(0px) scale(0.95);
 }
+.header {
+  margin-top: 0;
+}
 
 .intro {
   font-size: 1.5rem;
