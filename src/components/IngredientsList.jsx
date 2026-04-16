@@ -22,6 +22,13 @@ export default function IngredientsList(props) {
       <ul className="ingredients-list" aria-live="polite">
         {ingredientsListItems}
       </ul>
+      <button
+        type="button"
+        className="clear-button"
+        onClick={props.clearIngredients}
+      >
+        Clear all
+      </button>
       {props.ingredients.length > 3 && (
         <div className="get-recipe-container">
           <div>

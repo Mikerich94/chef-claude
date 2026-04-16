@@ -41,6 +41,10 @@ export default function Main() {
     );
   }
 
+  function clearIngredients() {
+    setIngredients([]);
+  }
+
   return (
     <main>
       <p className="intro">
@@ -62,6 +66,7 @@ export default function Main() {
           ingredients={ingredients}
           getRecipe={getRecipe}
           removeIngredient={removeIngredient}
+          clearIngredients={clearIngredients}
         />
       )}
       {loading && (
