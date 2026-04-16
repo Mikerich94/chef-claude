@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import ClaudeRecipe from "./components/ClaudeRecipe";
 import IngredientsList from "./components/IngredientsList";
 import { getRecipeFromChefClaude } from "./ai";
@@ -8,7 +8,16 @@ export default function Main() {
   const [recipe, setRecipe] = useState("");
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const loadingRef = useRef(null);
 
+  useEffect(() => {
+    if (loading) {
+      loadingRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "center",
+      });
+    }
+  }, [loading]);
   async function getRecipe() {
     setLoading(true);
 
@@ -66,8 +75,7 @@ export default function Main() {
         />
       )}
       {loading && (
-        <p className="loading">
-          {" "}
+        <p ref={loadingRef} className="loading">
           Fetching your recipe <span className="spinner"></span>
         </p>
       )}
