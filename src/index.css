@@ -153,6 +153,7 @@ ul.ingredients-list > li {
 }
 
 .intro {
+  font-size: 1.5rem;
   margin-top: 0;
   margin-bottom: 30px;
   text-align: center;
