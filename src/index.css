@@ -95,6 +95,7 @@ ul.ingredients-list > li {
 }
 
 .get-recipe-container {
+  flex-wrap: wrap;
   display: flex;
   justify-content: space-between;
   align-items: center;
