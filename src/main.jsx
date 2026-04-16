@@ -22,8 +22,7 @@ export default function Main() {
     setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
   }
 
-  function removeIngredient(formData) {
-    const ingredientToRemove = formData.get("ingredient");
+  function removeIngredient(ingredientToRemove) {
     setIngredients((prevIngredients) =>
       prevIngredients.filter((ingredient) => ingredient !== ingredientToRemove),
     );
