@@ -60,6 +60,23 @@ main {
   font-weight: 500;
 }
 
+.add-ingredient-form > button:hover {
+  background-color: #1f1f1e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.add-ingredient-form > button:active {
+  background-color: #1f1f1e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  transform: translateY(-1px);
+}
+
+.add-ingredient-form > button:focus-visible {
+  outline: 2px solid #fafaf8;
+  outline-offset: 2px;
+}
+
 .add-ingredient-form > button::before {
   content: "+";
   margin-right: 5px;
