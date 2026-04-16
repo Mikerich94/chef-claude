@@ -5,10 +5,9 @@ import { getRecipeFromChefClaude } from "./ai";
 
 export default function Main() {
   const [ingredients, setIngredients] = useState([]);
-
   const [recipe, setRecipe] = useState("");
-
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   async function getRecipe() {
     setLoading(true);
@@ -20,9 +19,14 @@ export default function Main() {
   function addIngredient(formData) {
     const newIngredient = formData.get("ingredient").trim();
 
-    if (!newIngredient) return;
+    if (!newIngredient) {
+      setError("Please enter an ingredient.");
+      return;
+    }
 
-    setIngredients((prevIngredients) => [...prevIngredients, newIngredient]);
+    setError("");
+
+    setIngredients((prev) => [...prev, newIngredient]);
   }
 
   function removeIngredient(ingredientToRemove) {
@@ -46,6 +50,7 @@ export default function Main() {
         />
         <button>Add ingredient</button>
       </form>
+      {error && <p className="error">{error}</p>}
       {ingredients.length > 0 && (
         <IngredientsList
           ingredients={ingredients}
