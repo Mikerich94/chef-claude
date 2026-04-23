@@ -9,6 +9,7 @@ export default function Main() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const loadingRef = useRef(null);
+  const recipeSection = useRef(null);
 
   useEffect(() => {
     if (loading) {
@@ -69,6 +70,7 @@ export default function Main() {
       {error && <p className="error">{error}</p>}
       {ingredients.length > 0 && (
         <IngredientsList
+          recipeRef={recipeSection}
           ingredients={ingredients}
           getRecipe={getRecipe}
           removeIngredient={removeIngredient}
